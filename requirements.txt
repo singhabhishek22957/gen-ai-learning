@@ -1,0 +1,20 @@
+# lang chain core 
+langchain
+langchain-core 
+
+
+#  gork 
+langchain-groq
+
+
+#  Hugging face Integration 
+ langchain-huggingface
+ transformers 
+ huggingface-hub
+ langchain_ollama
+
+
+#  env variable 
+python-dotenv
+
+
