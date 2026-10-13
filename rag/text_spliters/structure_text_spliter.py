@@ -1,0 +1,104 @@
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+from langchain_community.document_loaders import PyPDFLoader
+loader = PyPDFLoader('pdf.pdf')
+docs = loader.load()
+
+text = """
+# The Spirit of Cricket
+
+Cricket is a game of passion and pride,  
+Where millions of dreams stand side by side.  
+With a bat in hand and a ball in flight,  
+Players battle with courage from morning to night.
+
+The stadium fills with a roaring crowd,  
+Fans wave their flags and sing aloud.  
+The bowler runs with fire in his eyes,  
+While the batsman watches the ball arise.
+
+A fast delivery comes rushing near,  
+The batsman stands without any fear.  
+He swings his bat and strikes it high,  
+The cricket ball travels across the sky.
+
+Four runs are scored as the ball hits the ground,  
+The cheering supporters create a loud sound.  
+A powerful six clears the boundary line,  
+And thousands celebrate a moment divine.
+
+The captain stands with a thoughtful face,  
+Planning the fielders and setting the pace.  
+He studies the batsman, the pitch, and the weather,  
+Knowing that teamwork brings victory together.
+
+A spinner arrives with a clever disguise,  
+Turning the ball before the batsman's eyes.  
+The ball spins sharply and strikes the stumps,  
+The crowd jumps up with excited jumps.
+
+The umpire raises a finger in the air,  
+The batsman walks back, accepting his share.  
+One wicket falls, but the match moves on,  
+For a cricketing battle is never truly gone.
+
+In Test cricket, patience becomes an art,  
+Five days of struggle test every heart.  
+Batters defend while bowlers attack,  
+And every session can change the track.
+
+In One Day cricket, fifty overs decide,  
+Which team will finish with victory and pride.  
+Partnerships grow as the scoreboard climbs,  
+And smart decisions matter through difficult times.
+
+In T20 cricket, the action is fast,  
+Every single over could be the last.  
+Big hits, quick wickets, and clever plans,  
+Make thrilling contests for cricket fans.
+
+The wicketkeeper waits behind the stumps,  
+Ready to catch when the cricket ball jumps.  
+The fielders dive with remarkable speed,  
+Saving precious runs when the team is in need.
+
+A young player dreams of representing his land,  
+Holding the trophy with pride in his hand.  
+He practices daily beneath the sun,  
+Believing that effort makes champions won.
+
+India's cricket fans cheer blue with pride,  
+Standing together with hope by their side.  
+From village grounds to stadiums bright,  
+Cricket brings people together each night.
+
+Yet cricket teaches more than winning a game,  
+It teaches respect beyond glory and fame.  
+To accept defeat and celebrate success,  
+To stay calm under pressure and give your best.
+
+When the final ball is bowled at last,  
+The players remember the moments that passed.  
+Whether they win or lose the day,  
+The spirit of cricket will always stay.
+
+So pick up your bat and step onto the ground,  
+Let teamwork and sportsmanship always be found.  
+For cricket is more than a score or a name,  
+It is friendship, discipline, and love for the game.
+
+"""
+
+
+splitters = RecursiveCharacterTextSplitter(
+    chunk_size = 50,
+    chunk_overlap=0,
+)
+
+
+
+# res = splitters.split_text(text)
+res = splitters.split_text(text)
+
+for r in res :
+    print(r, end='\n')
